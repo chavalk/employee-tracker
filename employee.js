@@ -36,12 +36,24 @@ function runSearch() {
             case "View employees":
                 employeesSearch();
                 break;
+            
+            case "View roles":
+                rolesSearch();
+                break;
             }
         });
 }
 
 function employeesSearch() {
     var query = "SELECT e.id, first_name, last_name, title, salary FROM employee AS e LEFT JOIN role AS r ON e.role_id = r.id;";
+    connection.query(query, function(err, res) {
+        console.table(res);
+        runSearch();
+    })
+}
+
+function rolesSearch() {
+    var query = "SELECT r.id, title, salary, name AS department FROM role AS r LEFT JOIN department AS d ON r.department_id = d.id;";
     connection.query(query, function(err, res) {
         console.table(res);
         runSearch();
