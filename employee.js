@@ -1,8 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 var cTable = require("console.table");
-const { allowedNodeEnvironmentFlags } = require("process");
-const { runInNewContext } = require("vm");
 
 var connection = mysql.createConnection({
     host: "localhost",
