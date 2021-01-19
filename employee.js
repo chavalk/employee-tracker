@@ -1,5 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
+var cTable = require("console.table");
 
 var connection = mysql.createConnection({
     host: "localhost",
@@ -8,7 +9,7 @@ var connection = mysql.createConnection({
 
     user: "root",
 
-    password: "Culorico19*",
+    password: "",
     database: "employee_trackerDB"
 });
 
@@ -42,6 +43,7 @@ function runSearch() {
 function employeesSearch() {
     var query = "SELECT e.id, first_name, last_name, title, salary FROM employee AS e LEFT JOIN role AS r ON e.role_id = r.id;";
     connection.query(query, function(err, res) {
-        console.log(res);
+        console.table(res);
+        runSearch();
     })
 }
