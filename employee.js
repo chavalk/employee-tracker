@@ -40,6 +40,10 @@ function runSearch() {
             case "View roles":
                 rolesSearch();
                 break;
+
+            case "View departments":
+                depSearch();
+                break;
             }
         });
 }
@@ -54,6 +58,14 @@ function employeesSearch() {
 
 function rolesSearch() {
     var query = "SELECT r.id, title, salary, name AS department FROM role AS r LEFT JOIN department AS d ON r.department_id = d.id;";
+    connection.query(query, function(err, res) {
+        console.table(res);
+        runSearch();
+    })
+}
+
+function depSearch() {
+    var query = "SELECT * FROM department;";
     connection.query(query, function(err, res) {
         console.table(res);
         runSearch();
