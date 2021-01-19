@@ -30,7 +30,8 @@ function runSearch() {
                 "View roles",
                 "View departments",
                 "Add employee",
-                "Add role"
+                "Add role",
+                "Add department"
             ]
         })
         .then(function (answer) {
@@ -53,6 +54,10 @@ function runSearch() {
 
                 case "Add role":
                     addRole();
+                    break;
+
+                case "Add department":
+                    addDep();
                     break;
             }
         });
@@ -159,12 +164,29 @@ function addRole() {
                         salary: answer.salary,
                         department_id: depId
                     },
-                    function(err) {
+                    function (err) {
                         if (err) throw err;
                         console.log("The role was added successfully!");
                         runSearch();
                     }
                 )
+            })
+        })
+}
+
+function addDep() {
+    inquirer
+        .prompt([
+            {
+                name: "name",
+                type: "input",
+                message: "What is the name of the department?"
+            }
+        ]).then(function (answer) {
+            connection.query("INSERT INTO department SET ?", { name: answer.name }, function (err, res) {
+                if (err) throw err;
+                console.log("The department was added successfully!");
+                runSearch();
             })
         })
 }
