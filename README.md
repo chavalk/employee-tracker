@@ -1,52 +1,43 @@
-# employee-tracker
+# Employee Tracker
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-This application is a command-line application. It uses the inquirer npm package to interact with user entered input to and from a database. Right after the application is started, it'll give the user several options to choose from.
+A command line application built to allow employees, among with other information, to be tracked and to add new information.
 
-The first option is to view employees which calls the function to do a query for the employee table from the database and arrange the data using the LEFT JOIN option available in MySql.
+## What the project does
 
-The second option is to view roles which calls the function to do a query for the role table from the database and arrange the data using the LEFT JOIN option available in MySql.
+The project allows users to look up existing employee information by different criteria and to add new fields to each of the tables. Below is a GIF showing the application in action.
 
-The third option is to view departments which calls the function to do a query for the deparment table from the database and arrange the date using the SELECT option available in MySql.
+![employee-tracker](./images/employee-tracker.gif)
 
-The fourth option is to add employee which calls the function to first prompt the user for the information for the new employee and then uses the INSERT INTO option available in MySql to add the data to the employee table.
+## Why is the project useful
 
-The fifth and sixth option do the exact same thing but to the role and department tables respectively.
+The project is an easy way to see exisiting employee information by different criteria and to add new fields to the different tables.
 
-## Table of Contents
+## How can users get started with this project
 
-* [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
-* [Contributing](#contributing)
-* [Tests](#tests)
-* [Questions](#questions)
+Because it's a command line application, you would have to clone the repo, install the npm packages, and start the application from the terminal.
 
-## Installation
+## What technologies were used with this project
 
-The application uses the inquirer npm package and the mysql npm package. To install the packages simply run npm install inquirer and npm install mysql respectively on your terminal.
+* JavaScript
+* Node
+* Express
+* FS
+* Path
+* MySQL
+* Inquirer
 
-## Usage
-
-The application's primary purpose is to facilitate the management of employees in any business by being able to retrieve the data and add to the data.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-## Contributing
-
-Contributions are currently not acepted for this project.
-
-## Tests
-
-This application does not have any tests for the code.
-
-## Questions
+## Where can users get help with your project
 
 My GitHub username is: chavalk
 
 Link: https://github.com/chavalk
 
 If you have additional questions, feel free to reach me at chavalk@hotmail.com.
+
+## Who maintains and contributes to the project
+
+Currently I'm the only person maintaining and contributing to the project.
